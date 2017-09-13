@@ -10,7 +10,7 @@ function capitalizeFirstLetter(string) {
 }
 
 function generateWordsFromSuggestion(suggestion, i) {
-	wordsAPI = "http://api.datamuse.com/sug?s=" + suggestion[i] + '&max=50'
+	wordsAPI = "https://api.datamuse.com/sug?s=" + suggestion[i] + '&max=50'
 
 	$.ajax({
 	    url: wordsAPI,
