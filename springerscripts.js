@@ -14,7 +14,7 @@ function generateWordsFromSuggestion(suggestion, i) {
 
 	$.ajax({
 	    url: wordsAPI,
-	    // headers: { 'Access-Control-Allow-Origin': '*' },
+	    headers: { 'Access-Control-Allow-Origin': '*' },
 	    crossDomain: true,
 	    success: function( res ) {
 			if( i == suggestion.length ) {
