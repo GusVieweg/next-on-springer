@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Next on Springer!</title>
+	<script type="text/javascript" src="springerscripts.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#suggestionForm').submit(function () {
+			improvise();
+			return false;
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1>On this episode of "The Jerry Springer Show"</h1>
+	<p id="lol"></p>
+	<form name="suggestion" id="suggestionForm">
+		<input type="text" id="suggestionText">
+		<input type="submit">
+	</form>
+</body>
+</html>
