@@ -10,10 +10,11 @@ function capitalizeFirstLetter(string) {
 }
 
 function generateWordsFromSuggestion(suggestion, i) {
+	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	wordsAPI = "https://api.datamuse.com/sug?s=" + suggestion[i] + '&max=50'
 
 	$.ajax({
-	    url: wordsAPI,
+	    url: proxyurl + wordsAPI,
 	    headers: { 'Access-Control-Allow-Origin': '*' },
 	    crossDomain: true,
 	    success: function( res ) {
