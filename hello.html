@@ -1,23 +1,76 @@
 <html>
 <head>
 	<title>Next on Springer!</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="springerscripts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 	$(document).ready(function() {
+		$('#answerForm').hide();
+		$('#time').hide();
 		$('#suggestionForm').submit(function () {
 			improvise();
 			return false;
 		});
+		$('#nameForm').submit(function () {
+			getNameData();
+			return false;
+		})
+		$('#answerForm').submit(function () {
+			askUser();
+			return false;
+		})
+		$('#playAgainForm').submit(function () {
+			console.log('play again')
+			playAgain();
+			return false;
+		})
 	});
 	</script>
 </head>
-<body>
-	<h1>On this episode of "The Jerry Springer Show"</h1>
-	<p id="lol"></p>
-	<form name="suggestion" id="suggestionForm">
-		<input type="text" id="suggestionText">
-		<input type="submit">
-	</form>
+<body style="overflow-x:hidden;">
+	<h1 class="text-center">On this episode of</h1>
+	<img src="https://fanart.tv/fanart/tv/72548/hdtvlogo/the-jerry-springer-show-50fbf3290f77d.png" class="img img-responsive center-block" />
+	<div class="row">
+		<div class="col-md-4 col-md-push-1 text-center">
+			<h2>Use the form below to have the Internet generate a title</h2>
+			<h3 id="suggestionGen"></h3>
+			<form name="suggestion" id="suggestionForm">
+				<input type="text" id="suggestionText" class="form-control input-lg">
+				<button type="submit" class="btn btn-block btn-default btn-lg">Submit</button>
+			</form>
+		</div>
+		<div class="col-md-4 col-md-push-3 text-center">
+			<h2>Enter your name into the form below and have the Internet challenge you!</h2>
+			<div class="row">
+				<div class="col-md-8">
+					<h3 id="nameGen"></h3>
+				</div>
+				<div class="col-md-4">
+					<h1 id="time">20</h1>
+				</div>
+			</div>
+			<form name="name" id="nameForm">
+				<input type="text" id="nameText" placeholder="Enter your name!" class="form-control input-lg">
+				<button type="submit" class="btn btn-block btn-default btn-lg">Submit</button>
+			</form>
+			<form name="answer" id="answerForm">
+				<input type="text" id="answerText" class="form-control input-lg">
+				<button type="submit" class="btn btn-block btn-default btn-lg">Submit!</button>
+			</form>
+			<h2 id="results"></h2>
+			<div class="row">
+				<div class="col-md-12">
+					<form id="playAgainForm">
+						<button type="submit" id="playAgain" class="btn btn-block btn-default btn-lg">Play again</button>
+					</form>
+				</div>
+				<!-- <div class="col-md-6">
+					<button type="submit" id="saveToValue" class="btn btn-block btn-default btn-lg">Save to vault</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<hr />
 </body>
 </html>
